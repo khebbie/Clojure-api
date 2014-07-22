@@ -1,0 +1,94 @@
+(defn add [a b] (+ a b))
+(add 1 2)
+(defn sub [a b] (- a b))
+(defn make-logger [calc-fn] 
+(fn [a b]
+(let [result (calc-fn a b)]
+(println (str "Result is: " result))
+result))
+)
+(def log-add (make-logger add))
+(log-add 1 2)
+(def log-sub (make-logger sub))
+(sub 5 2)
+(log-sub 5 2)
+(defn indexable-words [text]
+(let [indexable-word? (fn [w] (> (count w) 2))]
+(filter indexable-word? (str/split text #"\W+)))"
+)
+(require '[clojure.string :as str])
+(defn indexable-words [text]
+(let [indexable-word? (fn [w] (> (count w) 2))]
+(filter indexable-word? (str/split text #"\W+")))
+)
+(indexable-words "a fine day it is")
+(defn indexable-words [text]
+(let [indexable-word? #((> (count %) 2))]
+(filter indexable-word? (str/split text #"\W+")))
+)
+(filter indexable-word? (str/split text #"\W+")))
+exit
+(* 120 0.8)
+lein ring -h
+exit
+(def foo 10)
+(resolve 'foo)
+(in-ns 'myapp)
+(def foo 10)
+java.io.File/separator
+(import '(java.io InputStream File))
+(require 'clojure.string)
+exit
+(require 'clojure.string)
+(clojure.string/split "Something,separated,by,commas" #",")
+(ns examples.exploring
+(:require [clojure.string :as str]) (:import (java.io File)))
+(loop [result [] x 5] (if (zero? x)
+result
+(recur (conj result x) (dec x))))
+(loop [result [] x 5] (if (zero? x)
+result
+(recur (conj result x) (dec x))))
+(loop [result [] x 500] (if (zero? x)
+result
+(recur (conj result x) (dec x))))
+(defn countdown [result x] (if (zero? x)
+result
+(recur (conj result x) (dec x))))
+(countdown [] 5)
+(countdown [] 50)
+(into [] (take 5 (iterate dec 5)))
+(range 6)
+(reverse (range 6))
+(defn indexed [coll] (map-indexed vector coll))
+(indexed "abcde")
+(defn index-filter [pred coll] (when pred
+(for [[idx elt] (indexed coll) :when (pred elt)] idx)))
+(index-filter #{\a \b} "abcdbbb")
+(vector  "abcd")
+(map-indexed (vector  "abcd"))
+(map-indexed vector  "abcd")
+#{\a \b}
+(:when #(\a \b) "a")
+(:when #(\a \b) "c")
+(:when (#(\a \b) "c"))
+(:when (#(\a \b) "c") "yes")
+(#(\a \b ) \a)
+(#(\a \b ) )
+#(\a \b )
+#{\a \b}
+(#{\a \b } )
+(#{\a \b } "a")
+(#{\a \b } \a)
+(#{\a \b } \c)
+(set "abc")
+(set [a b c])
+(set {a b c})
+((set "abc") "a")
+((set "abc") \a)
+((set "abc") \b)
+((set "abc") \k)
+exit
+(doc into)
+(doc defroutes)
+exit
