@@ -92,3 +92,111 @@ exit
 (doc into)
 (doc defroutes)
 exit
+(source take)
+(dir 'clojure/repl)
+(dir clojure/repl)
+(dir clojure.repl)
+((fn [message] (println message)) "Hej")
+((fn [message] (print message)) "Hej")
+(def x 1)
+(+ 2 x)
+(defn messenger [message] (println message))
+(messenger ::)
+(messenger "Hej")
+(messenger "Hej Clojure")
+(defn printstuff [] let [a 7] println a)
+(defn printstuff [] (let [a 7] println a))
+(printstuff )
+(defn messenger)
+(defn messenger
+([] (messenger "Hej Clojure"))
+([msg] (println msg))
+)
+(messenger)
+(messenger "Hej fra mig")
+(defn messenger [greeting & more)
+(defn messenger [greeting & more]
+(apply println greeting more)
+)
+(messenger "hej")
+(messenger "hej" "med" "dig")
+(defn messenger builder [greeting]
+(fn [who) (println greeting who)))
+(defn messenger builder [greeting]
+(fn [who] (println greeting who)))
+(defn messenger builder [greeting]
+(fn [who] (println greeting who)))
+(defn messenger-builder [greeting]
+(fn [who] (println greeting who)))
+(def hello-er (messenger-builder "hello"))
+(hello-er "world")
+Math/PI
+(in-ns 'khebbie.core)
+(in-ns 'user)
+(require 'clojure.set)
+(clojure.set/union #{1,2,3} #{5,6,7})
+(require '[clojure.set :as set])
+(set/union #{1,2,3} #{5,6,7})
+(use 'clojure.set)
+(union #{1,2,3} #{4,5,6})
+(user 'clojure.string)
+(use 'clojure.string)
+(use '[clojure.string :only (join)])
+(ns-publics 'clojure.java.io)
+(keys (ns-publics 'clojure.java.io))
+(dir 'clojure.java.io)
+(dir clojure.java.io)
+(doc delete-file)
+(use 'clojure.java.io)
+(doc delete-file)
+(delete-file "/Users/khebbie/Downloads/SpotifyInstaller.zip")
+join
+exit
+join
+(use '[clojure.string :only (join)])
+(doc join)
+(join "," ["a" "b"])
+(join "b" ["a" "c"])
+(the-ns 'clojure.core)
+(ns-publics 'clojure.core)
+(keys (ns-publics 'clojure.core))
+((dir clojure.core))
+exit
+(ns my.service.finders
+  (:require [monger.core :as mg]
+            [monger.collection :as mc]
+            [monger.operators :refer :all])
+  (:import org.bson.types.ObjectId))
+(let [conn (mg/connect)
+      db   (mg/get-db conn "monger-test")
+      coll "documents"]
+  ;; find one document by id, as Clojure map
+  (mc/find-map-by-id db coll (ObjectId. "4ec2d1a6b55634a935ea4ac8"))
+  ;; find one document by id, as `com.mongodb.DBObject` instance
+  (mc/find-by-id db coll (ObjectId. "4ec2d1a6b55634a935ea4ac8"))
+  ;; find one document as Clojure map
+  (mc/find-one-as-map db coll { :_id (ObjectId. "4ec2d1a6b55634a935ea4ac8") })
+  ;; find one document by id, as `com.mongodb.DBObject` instance
+  (mc/find-one db coll { :_id (ObjectId. "4ec2d1a6b55634a935ea4ac8") })
+  ;; all documents  as Clojure maps
+  (mc/find-maps db coll)
+  ;; all documents  as `com.mongodb.DBObject` instances
+  (mc/find db coll)
+  ;; with a query, as Clojure maps
+  (mc/find-maps db coll { :year 1998 })
+  ;; with a query, as `com.mongodb.DBObject` instances
+  (mc/find db coll { :year 1998 })
+  ;; with a query that uses operators
+  (mc/find db "products" { :price_in_subunits { $gt 4000 $lte 1200 } })
+  ;; with a query that uses operators as strings
+  (mc/find db "products" { :price_in_subunits { "$gt" 4000 "$lte" 1200 } }))
+(ns my.service.server
+  (:require [monger.core :as mg]
+            [monger.collection :as mc])
+  (:import org.bson.types.ObjectId))
+(let [conn (mg/connect)
+      db   (mg/get-db conn "monger-test")
+      oid  (ObjectId.)
+      doc  {:first_name "John" :last_name "Lennon"}]
+  (mc/insert db "documents" (merge doc {:_id oid})))
+exit
