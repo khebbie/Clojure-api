@@ -1,6 +1,6 @@
 # clojure-rest
 
-FIXME
+Please note this is me trying out some things with clojure, do not think of this a a pattern for creating a clojure json api.
 
 ## Prerequisites
 
