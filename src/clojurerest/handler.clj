@@ -1,9 +1,8 @@
-(ns clojure-rest.handler
-      (:import com.mchange.v2.c3p0.ComboPooledDataSource)
+(ns clojurerest.handler
       (:use compojure.core)
       (:use cheshire.core)
       (:use ring.util.response)
-      (:use clojure-rest.routes.document)
+      (:use clojurerest.routes.document)
       (:require [compojure.handler :as handler]
                 [ring.middleware.json :as middleware]
                 [compojure.route :as route]))

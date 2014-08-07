@@ -205,3 +205,17 @@ exit
 (use clojure-rest.repl)
 (use clojure-rest)
 exit
+(use 'clojure-rest.repl)
+(use 'clojure_rest.repl)
+(use 'clojure-rest.repl)
+(use 'clojure-rest)
+(use 'clojure-rest.repl)
+exit
+(use 'clojurerest.repl)
+exit
+(use 'clojurerest.repl)
+exit
+(use 'clojurerest.repl)
+exit
+(use 'clojurerest.repl)
+exit

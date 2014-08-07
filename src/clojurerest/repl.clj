@@ -1,5 +1,5 @@
-(ns clojure-rest.repl
-  (:use clojure-rest.handler
+(ns clojurerest.repl
+  (:use clojurerest.handler
         ring.server.standalone
         [ring.middleware file-info file]))
 
@@ -32,5 +32,3 @@
 (defn stop-server []
   (.stop @server)
   (reset! server nil))
-
-

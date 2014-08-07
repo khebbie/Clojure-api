@@ -1,8 +1,8 @@
-(ns clojure-rest.routes.document
+(ns clojurerest.routes.document
       (:use compojure.core)
       (:use cheshire.core)
       (:use ring.util.response)
-      (:use clojure-rest.models.document)
+      (:use clojurerest.models.document)
       (:require [compojure.handler :as handler]
                 [ring.middleware.json :as middleware]
                 [compojure.route :as route]))
