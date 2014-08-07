@@ -23,7 +23,7 @@
     (let [conn (mg/connect)
       db   (mg/get-db conn "monger-test")
       coll "documents"]
-   (mc/find-map-by-id db coll (ObjectId. id))))
+   (generate-string (mc/find-map-by-id db coll (ObjectId. id)))))
 
     (defn create-new-document [doc]
       (let [conn (mg/connect)
