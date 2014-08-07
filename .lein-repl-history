@@ -200,3 +200,8 @@ exit
       doc  {:first_name "John" :last_name "Lennon"}]
   (mc/insert db "documents" (merge doc {:_id oid})))
 exit
+(require clojure-rest.repl)
+(require clojure-rest)
+(use clojure-rest.repl)
+(use clojure-rest)
+exit

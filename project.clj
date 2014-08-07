@@ -8,6 +8,8 @@
                      [cheshire "5.3.1"]
                      [com.novemberain/monger "2.0.0"]]
       :plugins [[lein-ring "0.8.10"]]
-      :ring {:handler clojure-rest.handler/app}
+      :ring {:handler clojure-rest.handler/app
+      :auto-reload? true
+       :auto-refresh? true}
       :profiles
       {:dev {:dependencies [[ring-mock "0.1.3"]]}})
